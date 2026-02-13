@@ -85,7 +85,7 @@ namespace Topic_6
             Console.WriteLine("Withdrawal: Enter 3");
             Console.WriteLine("Account Balance Update: Enter 4");
             Console.WriteLine("Exit: Enter 5");
-            Console.WriteLine($"You have {total} to use in this bank");
+            Console.WriteLine($"You have {total:C} to use in this bank");
             string choice = Console.ReadLine();
             switch (choice)
             {
