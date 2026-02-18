@@ -53,7 +53,13 @@ namespace Topic_6
             Console.WriteLine("Please enter a Max number");
             while (!decimal.TryParse(Console.ReadLine(), out max) || max < 0)
                 Console.WriteLine("Invalid Input, please try again");
-
+            if (min > max || max < min)
+            {
+                decimal Temp = min;
+                min = max;
+                max = Temp;
+                Console.WriteLine("Your min is bigger than max. They will be switched now");
+            }
             //Console.WriteLine($"Now can you enter a number between {min} and {max}");
             //while (!decimal.TryParse(Console.ReadLine(), out numBetween) || numBetween < 0)
             //Console.WriteLine("Invalid Input, please try again");
@@ -70,6 +76,7 @@ namespace Topic_6
             Console.WriteLine("Good job! You did it!");
             Console.WriteLine();
             Console.WriteLine();
+
 
 
 
