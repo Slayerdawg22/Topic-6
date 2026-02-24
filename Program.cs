@@ -116,7 +116,11 @@ namespace Topic_6
                         total -= 0.75m;
                         total += depo;
                         Console.WriteLine($"Your total is now {total:C}.");
-
+                        if (total < 0)
+                        {
+                            Console.WriteLine("You are lower then 0 in your account. You now have to leave");
+                            return;
+                        }
                         break;
                     case "payment":
                         Console.Clear();
@@ -138,12 +142,22 @@ namespace Topic_6
                         total -= withdrawal;
                         Console.WriteLine($"You took out {withdrawal:C}. Your total is now {total:C}.");
                         Console.WriteLine();
+                        if (total < 0)
+                        {
+                            Console.WriteLine("You are lower then 0 in your account. You now have to leave");
+                            return;
+                        }
                         break;
                     case "update":
                         Console.Clear();
                         total -= 0.75m;
                         Console.WriteLine($"Your account is now at {total:C}");
                         Console.WriteLine();
+                        if (total < 0)
+                        {
+                            Console.WriteLine("You are lower then 0 in your account. You now have to leave");
+                            return;
+                        }
                         break;
                     case "exit":
                         Console.Clear();
@@ -154,6 +168,11 @@ namespace Topic_6
                         Console.WriteLine("Invalid menu choice.");
                         Console.WriteLine("You will be charged $0.75");
                         total -= 0.75m;
+                        if (total < 0)
+                        {
+                            Console.WriteLine("You are lower then 0 in your account. You now have to leave");
+                            return;
+                        }
                         break;
 
 
@@ -163,11 +182,7 @@ namespace Topic_6
                     Console.WriteLine("Press enter to continue");
                     Console.ReadLine();
                 }
-                if (total < 0)
-                {
-                    Console.WriteLine("You are lower then 0 in your account. You now have to leave");
-                    return;
-                }
+                
             }
         }
         public static void Die()
