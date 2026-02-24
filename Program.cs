@@ -96,16 +96,16 @@ namespace Topic_6
                 Console.WriteLine("WELCOME TO BoB, THE BEST BANK IN THE UNIVERSE");
                 Console.WriteLine();
                 Console.WriteLine("There are many options such as:");
-                Console.WriteLine("Deposit: Enter 1");
-                Console.WriteLine("Bill payment: Enter 2");
-                Console.WriteLine("Withdrawal: Enter 3");
-                Console.WriteLine("Account Balance Update: Enter 4");
-                Console.WriteLine("Exit: Enter 5");
+                Console.WriteLine("Deposit: Enter deposit");
+                Console.WriteLine("Bill payment: Enter payment");
+                Console.WriteLine("Withdrawal: Enter withdrawal");
+                Console.WriteLine("Account Balance Update: Enter update");
+                Console.WriteLine("Exit: Enter exit");
                 Console.WriteLine($"You have {total:C} to use in this bank");
-                string choice = Console.ReadLine();
+                string choice = Console.ReadLine().ToLower();
                 switch (choice)
                 {
-                    case "1":
+                    case "deposit":
                         Console.Clear();
                         Console.WriteLine("To Deposit, enter the amount you'd like to deposit");
                         while (!decimal.TryParse(Console.ReadLine(), out depo) || depo < 0)
@@ -118,7 +118,7 @@ namespace Topic_6
                         Console.WriteLine($"Your total is now {total:C}.");
 
                         break;
-                    case "2":
+                    case "payment":
                         Console.Clear();
                         total -= 0.75m;
                         Console.WriteLine("How much do you want to pay for your bill");
@@ -129,7 +129,7 @@ namespace Topic_6
                         Console.WriteLine($"You will pay {bill:C}. Your total is now {total:C}.");
                         Console.WriteLine();
                         break;
-                    case "3":
+                    case "withdrawal":
                         Console.Clear();
                         total -= 0.75m;
                         Console.WriteLine("How much do you want to withdrawal?");
@@ -139,13 +139,13 @@ namespace Topic_6
                         Console.WriteLine($"You took out {withdrawal:C}. Your total is now {total:C}.");
                         Console.WriteLine();
                         break;
-                    case "4":
+                    case "update":
                         Console.Clear();
                         total -= 0.75m;
                         Console.WriteLine($"Your account is now at {total:C}");
                         Console.WriteLine();
                         break;
-                    case "5":
+                    case "exit":
                         Console.Clear();
                         inBank = false;
                         break;
